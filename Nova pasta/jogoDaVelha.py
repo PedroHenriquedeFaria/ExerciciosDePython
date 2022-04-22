@@ -1,6 +1,7 @@
 espacos = [1,2,3,4,5,6,7,8,9]
 ocupados = [0,0,0,0,0,0,0,0,0]
 rodadas = 0
+a = 0
 
 def jogo():
     for c in range(0, 9):
@@ -11,12 +12,14 @@ def jogo():
 jogo()
 
 while rodadas < 9:
-    esc =  int(input('Escolha onde vai colocar o "X":'))
-    if(ocupados[esc-1]):
-        print("Lugar inválido!")
-    else:
-        ocupados[esc-1] = 1
-        espacos[esc-1] = 'X'
+    while True:
+        esc = int(input('Escolha onde vai colocar o "X":'))
+        if(ocupados[esc-1]):
+            print("Lugar inválido!")
+        else:
+            ocupados[esc-1] = 1
+            espacos[esc-1] = 'X'
+            break;
 
     jogo()
     rodadas +=1
@@ -50,13 +53,15 @@ while rodadas < 9:
          print("Vitória do jogador X!")
          break;
 
+    while True:
+        esc =  int(input('Escolha onde vai colocar o "O":'))
+        if(ocupados[esc-1]):
+            print("Lugar inválido!")
+        else:
+            ocupados[esc-1] = 1
+            espacos[esc-1] = 'O'
+            break;
 
-    esc =  int(input('Escolha onde vai colocar o "O":'))
-    if(ocupados[esc-1]):
-        print("Lugar inválido!")
-    else:
-        ocupados[esc-1] = 1
-        espacos[esc-1] = 'O'
 
     jogo()
     rodadas +=1
