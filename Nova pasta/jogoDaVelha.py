@@ -1,7 +1,6 @@
 espacos = [1,2,3,4,5,6,7,8,9]
 ocupados = [0,0,0,0,0,0,0,0,0]
 rodadas = 0
-a = 0
 
 def jogo():
     for c in range(0, 9):
